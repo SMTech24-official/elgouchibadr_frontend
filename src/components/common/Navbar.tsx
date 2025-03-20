@@ -16,9 +16,9 @@ const Navbar = () => {
             <div className="container py-4">
                 <div className="flex justify-between items-center">
                     {/* Logo */}
-                    <div className="w-[170px] h-[40px]">
+                    <Link href={'/'} className="w-[170px] h-[40px]">
                         <Image src={logo} width={170} height={40} alt="logo-img" className="w-full h-full" />
-                    </div>
+                    </Link>
 
                     {/* Desktop Menu */}
                     <div className="hidden lg:flex gap-10 items-center">
