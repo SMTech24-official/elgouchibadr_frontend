@@ -1,4 +1,3 @@
-import { TerminalFormData } from "@/app/(withLayout)/terminals/page";
 import baseApi from "@/redux/api/baseApi";
 
 const terminalApi = baseApi.injectEndpoints({
@@ -24,14 +23,7 @@ const terminalApi = baseApi.injectEndpoints({
       }),
       providesTags: ["Terminal"],
     }),
-    addTerminal: builder.mutation({
-      query: (terminal: TerminalFormData) => ({
-        url: "/terminals",
-        method: "POST",
-        body: terminal,
-      }),
-      invalidatesTags: ["Terminal"],
-    }),
+  
     updateTerminal: builder.mutation({
       query: ({ updatedTerminal, id }) => ({
         url: `/terminals/${id}`,
@@ -45,7 +37,6 @@ const terminalApi = baseApi.injectEndpoints({
 
 export const {
   useGetTerminalsQuery,
-  useAddTerminalMutation,
   useGetSingleTerminalByIdQuery,
   useGetAllReviewsbyTerminalIdQuery,
   useUpdateTerminalMutation,
