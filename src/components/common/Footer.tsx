@@ -8,11 +8,16 @@ import playstore from "@/assets/logo/playstore.png";
 // import { Form, FormControl, FormField, FormItem, FormMessage } from './ui/form';
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
-import {  useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import {Form, FormControl, FormField, FormItem, FormMessage } from "../ui/form";
-
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "../ui/form";
 
 type FooterLink = {
   label: string;
@@ -111,7 +116,7 @@ export default function Footer() {
                 </Button>
               </form>
             </Form>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-600 pt-5">
               By subscribing you agree to with our Privacy Policy
             </p>
           </div>
@@ -157,23 +162,29 @@ export default function Footer() {
               ))}
             </div>
             <h3 className="mb-4 text-lg font-medium">Download App</h3>
-            <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
-              <Link href="https://apps.apple.com" className="inline-block">
+            <div className="flex items-center gap-3">
+              <Link
+                href="https://apps.apple.com"
+                className="inline-block w-[140px] h-[42px] sm:w-[160px] sm:h-[48px] lg:w-[180px] lg:h-[52px]"
+              >
                 <Image
                   src={applestore}
                   alt="Download on App Store"
-                  width={140}
-                  height={42}
-                  className="h-auto"
+                  width={180}
+                  height={52}
+                  className="w-full h-full object-contain"
                 />
               </Link>
-              <Link href="https://play.google.com" className="inline-block">
+              <Link
+                href="https://play.google.com"
+                className="inline-block w-[140px] h-[42px] sm:w-[160px] sm:h-[48px] lg:w-[180px] lg:h-[52px]"
+              >
                 <Image
                   src={playstore}
                   alt="Get it on Google Play"
-                  width={140}
-                  height={42}
-                  className="h-auto"
+                  width={180}
+                  height={52}
+                  className="w-full h-full object-contain"
                 />
               </Link>
             </div>
