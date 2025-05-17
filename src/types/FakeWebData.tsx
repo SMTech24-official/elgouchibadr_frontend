@@ -5,6 +5,7 @@ import front from "@/assets/image/front.png";
 import handle from "@/assets/image/handle.png";
 import sit from "@/assets/image/sit.png";
 import { CarFilter } from "./Interface.type";
+import man from '@/assets/women.png'
 
 // Car data with 5 images per car (1 main + 4 additional)
 export const sliderCarData = [
@@ -416,3 +417,69 @@ export const CarDescriptionData = {
    
   ]
 };
+
+
+
+type Bid = {
+  id: number;
+  buyer: {
+    name: string;
+    avatar: string;
+  };
+  amount: number;
+  timeAgo: string;
+  votes: number;
+};
+
+export const bidData: Bid[] = [
+  {
+    id: 1,
+    buyer: {
+      name: "ux.saifur.info",
+      avatar: man.src,
+    },
+    amount: 113500,
+    timeAgo: "10 hours ago",
+    votes: 12,
+  },
+  {
+    id: 2,
+    buyer: {
+      name: "car_enthusiast",
+      avatar: man.src,
+    },
+    amount: 110000,
+    timeAgo: "12 hours ago",
+    votes: 8,
+  },
+  {
+    id: 3,
+    buyer: {
+      name: "porsche_lover",
+      avatar: man.src,
+    },
+    amount: 105000,
+    timeAgo: "1 day ago",
+    votes: 15,
+  },
+  {
+    id: 4,
+    buyer: {
+      name: "track_day",
+      avatar: man.src,
+    },
+    amount: 100500,
+    timeAgo: "2 days ago",
+    votes: 5,
+  },
+  {
+    id: 5,
+    buyer: {
+      name: "auto_expert",
+      avatar: man.src,
+    },
+    amount: 95500,
+    timeAgo: "3 days ago",
+    votes: 20,
+  },
+];

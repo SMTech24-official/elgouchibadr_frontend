@@ -21,6 +21,8 @@ import ImageGallery from "./ImageGallery";
 import BidModal from "../forms/BidModal";
 import ProductCard from "../card/ProductCard";
 import CarDescription from "./CarDescription";
+import CommentSection from "./CommentSection";
+import BidSection from "./BidSection";
 
 export default function CarListing() {
   const [cars] = useState(filterCarData);
@@ -114,7 +116,7 @@ export default function CarListing() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Car Information */}
         <div className="md:col-span-2">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div className="grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-4">
             <div className="bg-accent text-white p-4 rounded-md flex items-center justify-center">
               <Clock className="h-5 w-5 mr-2" />
               <span>10:50:54</span>
@@ -244,6 +246,11 @@ export default function CarListing() {
             </div>
           </div>
           <CarDescription />
+
+          <CommentSection />
+          <div className="py-[40px]">
+            <BidSection />
+          </div>
         </div>
 
         {/* Auctions Ending Soon */}
@@ -273,6 +280,7 @@ export default function CarListing() {
           onClose={() => setGalleryOpen(false)}
         />
       )}
+      
     </div>
   );
 }
