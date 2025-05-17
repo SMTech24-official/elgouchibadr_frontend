@@ -5,19 +5,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 // import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { carData } from "@/types/FakeWebData";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { sliderCarData } from "@/types/FakeWebData";
 
 export default function CarSlider() {
 
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="relative mx-auto ">
+    <div className="relative mx-auto container ">
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={20}
@@ -30,10 +30,9 @@ export default function CarSlider() {
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
         className="relative"
       >
-        {carData.map((car, index) => (
+        {sliderCarData.map((car, index) => (
           <SwiperSlide key={index}>
             <div className="grid grid-cols-1 gap-2 md:grid-cols-5 md:gap-4">
-              {/* Large main image */}
               <div className="relative col-span-1 h-[300px] overflow-hidden rounded-lg md:col-span-3 md:h-[400px]">
                 <Image
                   src={car.mainImage}
@@ -43,7 +42,6 @@ export default function CarSlider() {
                 />
               </div>
 
-              {/* Grid of smaller images */}
               <div className="col-span-1 grid grid-cols-2 gap-2 md:col-span-2">
                 {Array.isArray(car.additionalImages) &&
                   car.additionalImages.map(
@@ -66,7 +64,6 @@ export default function CarSlider() {
               </div>
             </div>
 
-            {/* Car details */}
             <div className="mt-4 text-center">
               <h3 className="text-xl font-bold">
                 {car.make} {car.model}
@@ -94,7 +91,7 @@ export default function CarSlider() {
         className={cn(
           "swiper-button-next w-[40px] h-[40px] absolute right-2 top-1/2 z-10 flex items-center justify-center rounded-full transition-all ",
           "-translate-y-1/2",
-          activeIndex === carData.length - 1
+          activeIndex === sliderCarData.length - 1
             ? "opacity-50 cursor-not-allowed"
             : "opacity-100"
         )}

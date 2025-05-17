@@ -9,3 +9,23 @@ export type Car = {
   mainImage:string | File 
   additionalImages: File | StaticImageData[]
 }
+
+export interface CarFilter {
+  id: string
+  title: string
+  year: number
+  make: string
+  model: string
+  image:  string | StaticImageData
+  price: number
+  mileage: number
+  engineDetails: string
+  transmission: string
+  bodyStyle: string
+  location: string
+  timeLeft: string
+  endingSoon: boolean
+  newlyListed: boolean
+  endDate: Date
+  listDate: Date
+}
