@@ -8,7 +8,7 @@ import { z } from "zod";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { IoMenu } from "react-icons/io5";
 import { IoIosNotifications } from "react-icons/io";
-
+import man from '@/assets/women.png'
 import { usePathname } from "next/navigation";
 import { LuUserRound } from "react-icons/lu";
 import { Input } from "../ui/input";
@@ -240,6 +240,14 @@ export default function Navbar() {
             <p className="flex items-center text-sm font-medium text-gray-700">
               Sign Up/Sign In
             </p>
+          </Link>
+          <Link
+            href={"/user"}
+            className="lg:flex md:flex hidden items-center gap-2 p-2 w-[50px] h-[50px] hover:shadow-lg rounded-full hover:bg-slate-50 "
+          >
+            <Image src={man} width={50} height={50} alt="profile" className="w-full h-full" />
+
+           
           </Link>
         </div>
 
