@@ -28,7 +28,7 @@ const navItems: NavItem[] = [
   { label: "Auctions", href: "/" },
   { label: "Sell a Car", href: "/sell-car" },
   { label: "Community", href: "/community" },
-  { label: "What's Cars & Bids?", href: "/about" },
+  { label: "What's Cars & Bids?", href: "/car-bids" },
   { label: "Daily Email", href: "/daily-email" },
 ];
 
