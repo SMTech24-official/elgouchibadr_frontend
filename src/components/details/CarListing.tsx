@@ -10,15 +10,21 @@ import {
 import { useState } from "react";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import Image from "next/image";
-import { carDetails, carDetailsImages, filterCarData } from "@/types/FakeWebData";
+import {
+  carDetails,
+  carDetailsImages,
+  filterCarData,
+} from "@/types/FakeWebData";
+import man from "@/assets/women.png";
 import { Button } from "../ui/button";
 import ImageGallery from "./ImageGallery";
 import BidModal from "../forms/BidModal";
 import ProductCard from "../card/ProductCard";
+import CarDescription from "./CarDescription";
 
 export default function CarListing() {
-      const [cars, ] = useState(filterCarData)
-    
+  const [cars] = useState(filterCarData);
+
   const [showBidModal, setShowBidModal] = useState(false);
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -109,30 +115,30 @@ export default function CarListing() {
         {/* Car Information */}
         <div className="md:col-span-2">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-            <div className="bg-gray-900 text-white p-4 rounded-md flex items-center justify-center">
+            <div className="bg-accent text-white p-4 rounded-md flex items-center justify-center">
               <Clock className="h-5 w-5 mr-2" />
               <span>10:50:54</span>
             </div>
-            <div className="bg-gray-900 text-white p-4 rounded-md flex items-center justify-center">
+            <div className="bg-accent text-white p-4 rounded-md flex items-center justify-center">
               <DollarSign className="h-5 w-5 mr-2" />
               <span>$90,562</span>
             </div>
-            <div className="bg-gray-900 text-white p-4 rounded-md flex items-center justify-center">
+            <div className="bg-accent text-white p-4 rounded-md flex items-center justify-center">
               <Users className="h-5 w-5 mr-2" />
               <span>40</span>
             </div>
-            <div className="bg-gray-900 text-white p-4 rounded-md flex items-center justify-center">
+            <div className="bg-accent text-white p-4 rounded-md flex items-center justify-center">
               <MessageSquare className="h-5 w-5 mr-2" />
               <span>1,120</span>
             </div>
             <Button
-              className="bg-blue-500 hover:bg-blue-600 text-white p-4 h-auto font-medium"
+              className="bg-primary text-white p-4 h-auto font-medium"
               onClick={() => setShowBidModal(true)}
             >
               Place Bid
             </Button>
           </div>
-          <h2 className="text-2xl font-bold mb-4">Car Information</h2>
+          <h2 className="text-2xl font-bold py-4">Car Information</h2>
           <div className="border rounded-md overflow-hidden">
             <Table>
               <TableBody>
@@ -209,20 +215,35 @@ export default function CarListing() {
           </div>
 
           {/* Seller Information */}
-          <div className="mt-6 border rounded-md p-4">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
-                <Image
-                  src="/placeholder.svg?height=48&width=48"
-                  alt="Seller avatar"
-                  width={48}
-                  height={48}
-                  className="object-cover"
-                />
+          <div className="mt-6  rounded-md  ">
+            <div className="bg-gray-200 p-4 rounded-[8px]">
+              <div className="flex items-center gap-4 bg-gray-200">
+                <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                  <Image
+                    src={man}
+                    alt="Seller avatar"
+                    width={48}
+                    height={48}
+                    className="object-cover"
+                  />
+                </div>
+                <h3 className="text-xl font-bold">Saifur Rahman</h3>
               </div>
-              <h3 className="text-xl font-bold">Saifur Rahman</h3>
+              <p>
+                The Porsche Cayman GT4 is one of my favorite cars on the market,
+                as it boasts a fantastic naturally aspirated 4.0-liter flat-6,
+                incredibly precise handling, and one of the most thrilling
+                driving experiences of any modern car. This particular GT4
+                features a quick-shifting 7-speed PDK automatic transmission –
+                and it touts some great equipment, including 20-inch wheels,
+                leather and Race-Tex upholstery, carbon fiber bucket seats, and
+                Porsche Ceramic Composite Brakes. Plus, it hasn&apos;t been
+                significantly modified, and it comes with a clean, accident-free
+                Carfax report for added buyer confidence.
+              </p>
             </div>
           </div>
+          <CarDescription />
         </div>
 
         {/* Auctions Ending Soon */}

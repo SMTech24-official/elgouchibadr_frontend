@@ -1,7 +1,7 @@
 import { testimonials } from "@/types/FakeWebData";
 import Image from "next/image";
 import { AiFillStar } from "react-icons/ai";
-import man from "@/assets/women (2).png";
+import man from "@/assets/women.png";
 const TestimonialsSection = () => {
   return (
     <section className="">

@@ -362,3 +362,57 @@ export const carDetails = {
   interiorColor: "Black",
   sellerType: "Private Party",
 }
+
+
+export const CarDescriptionData = {
+  title: "Porsche 718 Cayman GT4",
+  year: 2022,
+  color: "White",
+  interior: "Black",
+  mileage: 7400,
+  highlights: [
+    "The odometer on this GT4 currently indicates about 7,400 miles.",
+    "The attached Carfax history report shows no accidents or mileage discrepancies in this Porsche's past.",
+    "Notable equipment reported by the seller includes the Chrono Package, 20-inch wheels, Porsche Ceramic Composite Brakes, LED headlights with Porsche Dynamic Light System Plus, carbon fiber bucket seats, and more.",
+    "Notable modifications reported by the seller include a Martini Racing-style livery, XPEL paint protection film, a carbon fiber gurney flap, and window tint."
+  ],
+  equipment: [
+    "Chrono Package with preparation for lap trigger",
+    "20-inch wheels",
+    "Porsche Ceramic Composite Brakes (PCCB)",
+    "Porsche Active Suspension Management (PASM)",
+    "LED headlights with Porsche Dynamic Light System Plus (PDLS+)",
+    "Leather and Race-Tex upholstery with silver stitching",
+    "Carbon fiber bucket seats",
+    "Power-folding side mirrors"
+  ],
+  modifications: [
+    "Martini Racing-style livery",
+    "XPEL paint protection film on exterior panels",
+    "Carbon fiber gurney flap",
+    "Window tint"
+  ],
+  flaws: [
+    "Some chips on hood",
+    "Some blemishes on driver-side front wheel",
+    "Some creases and wear on driver's seat bolster",
+  ],
+  history: [
+    "February 2025 (7,256 miles): Window regulator(s) replaced",
+    "September 2024 (6,481 miles): Engine oil and filter changed",
+    "August 2024 (5,830 miles): Muffler replaced, exhaust repaired",
+    "May 2024 (4,499 miles): Four tires replaced",
+    "Mar 2024 (3,449 miles): Spark plug(s) replaced, coolant flushed",
+    "November 2023 (2,394 miles): Muffler replaced",
+    "November 2023 (2,149 miles): Engine oil and filter changed",
+    "August 2023 (1,293 miles): Rear brake pads replaced",
+    "June 2023 (539 miles): 10,000-mile service performed, engine oil and filter changed",
+  ],
+  sales: [
+    "2 keys",
+    "Owner's manuals",
+    "2 sets of carpet floor mats",
+    "1 ses of all-weather floor mats",
+   
+  ]
+};
