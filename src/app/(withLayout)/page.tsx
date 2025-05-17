@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <CarSlider />
-      <div className="py-[80px]">
+      <div className="py-[40px]">
         <CarFilters />
       </div>
       <div className="pb-[80px]">
