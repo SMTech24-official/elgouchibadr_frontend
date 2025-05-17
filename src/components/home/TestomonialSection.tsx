@@ -6,7 +6,7 @@ const TestimonialsSection = () => {
   return (
     <section className="">
       <div className="container mx-auto ">
-        <h2 className="text-3xl font-semibold text-gray-800 mb-8">
+        <h2 className="text-3xl text-center font-semibold text-gray-800 mb-8">
           {" "}
           Our Customers love us!
         </h2>
