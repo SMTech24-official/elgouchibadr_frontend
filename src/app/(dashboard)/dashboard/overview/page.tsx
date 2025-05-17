@@ -3,6 +3,9 @@
 import OrderInsightsCard from "@/components/dashboard/OrderInsightsChart";
 import OrderStatistics from "@/components/dashboard/OrderStatistics";
 
+// import OrderInsightsCard from "@/components/dashboard/OrderInsightsChart";
+// import OrderStatistics from "@/components/dashboard/OrderStatistics";
+
 const Dashboard = () => {
  
 

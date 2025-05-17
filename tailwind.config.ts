@@ -28,7 +28,7 @@ export default {
   		colors: {
   			primary: '#00B1FF',
   			secondary: '#00ca8a',
-  			accent: '#333333'
+  			accent: '#2f303b'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
