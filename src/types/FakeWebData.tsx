@@ -310,3 +310,55 @@ export const testimonials: Testimonial[] = [
     rating: 4,
   },
 ]
+
+
+
+export const carDetailsImages = [
+  {
+    id: 1,
+    src: car,
+    alt: "White Porsche 718 Cayman GT4 with Martini racing stripes - front view",
+  },
+  {
+    id: 2,
+    src: front,
+    alt: "Front view of Porsche 718 Cayman GT4",
+  },
+  {
+    id: 3,
+    src: handle,
+    alt: "Side view of Porsche 718 Cayman GT4",
+  },
+  {
+    id: 4,
+    src: sit,
+    alt: "Rear view of Porsche 718 Cayman GT4",
+  },
+  {
+    id: 5,
+    src: handle,
+    alt: "Interior dashboard view of Porsche 718 Cayman GT4",
+  },
+  {
+    id: 6,
+    src: front,
+    alt: "Interior seats view of Porsche 718 Cayman GT4",
+  },
+]
+
+export const carDetails = {
+  make: "Porsche",
+  model: "718 Cayman",
+  mileage: "7,400",
+  vin: "WP0AC2A87NS275695",
+  titleStatus: "Clean (RI)",
+  location: "Cumberland, RI 02864",
+  seller: "Saifur Rahman",
+  engine: "4.0L Flat-6",
+  drivetrain: "Rear-wheel drive",
+  transmission: "Automatic (7-Speed)",
+  bodyStyle: "Coupe",
+  exteriorColor: "White",
+  interiorColor: "Black",
+  sellerType: "Private Party",
+}

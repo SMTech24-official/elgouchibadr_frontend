@@ -6,6 +6,7 @@ import { Star } from "lucide-react";
 import { formatCurrency } from "@/lib/carutils";
 import { CarFilter } from "@/types/Interface.type";
 import { HiClock } from "react-icons/hi";
+import Link from "next/link";
 
 interface ProductCardProps {
   car: CarFilter;
@@ -15,14 +16,14 @@ export default function ProductCard({ car }: ProductCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   return (
-    <div className="bg-white rounded-lg overflow-hidden border border-gray-200">
+    <Link href={`/car-details/${car.id}`} className="bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg">
       <div className="relative">
         <Image
           src={car.image || "/placeholder.svg"}
           alt={car.title}
           width={400}
           height={300}
-          className="w-full h-64 object-cover"
+          className="w-full h-64 object-cover hover:scale-105 transition-all"
         />
         <button
           className="absolute top-3 right-3 p-1 rounded-full"
@@ -59,6 +60,6 @@ export default function ProductCard({ car }: ProductCardProps) {
           </button>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
