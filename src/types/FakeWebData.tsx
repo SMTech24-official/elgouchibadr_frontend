@@ -483,3 +483,26 @@ export const bidData: Bid[] = [
     votes: 20,
   },
 ];
+
+
+export const notificationData= [
+  {
+    id: 1,
+    title:
+      "Please confirm your email address by clicking on the link we just emailed you. If you cannot find the email, you can request a new confirmation email or change your email address.",
+    time: "1 days ago",
+    read: false,
+  },
+  {
+    id: 2,
+    title: "Your order has been shipped",
+    time: "2 days ago",
+    read: false,
+  },
+  {
+    id: 3,
+    title: "Welcome to our platform!",
+    time: "5 days ago",
+    read: true,
+  },
+]

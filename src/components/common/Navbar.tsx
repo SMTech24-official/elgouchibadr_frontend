@@ -7,13 +7,18 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { IoMenu } from "react-icons/io5";
+import { IoIosNotifications } from "react-icons/io";
 
 import { usePathname } from "next/navigation";
 import { LuUserRound } from "react-icons/lu";
 import { Input } from "../ui/input";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "../ui/button";
+import { notificationData } from "@/types/FakeWebData";
+import { cn } from "@/lib/utils";
+import { FaChevronCircleRight } from "react-icons/fa";
+
 type NavItem = {
   label: string;
   href: string;
@@ -37,7 +42,7 @@ export default function Navbar() {
     resolver: zodResolver(searchCarSchema),
   });
   const pathname = usePathname();
-  const [open, setOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const onSubmit = (data: searchFormValues) => {
     try {
@@ -46,6 +51,55 @@ export default function Navbar() {
       console.log(e);
     }
   };
+
+  const [open, setOpen] = useState<boolean>(false);
+
+  // Handle click outside
+  // useEffect(() => {
+  //   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  //   const handleClickOutside = (event: any) => {
+  //     if (searchRef.current && !searchRef.current.contains(event.target)) {
+  //       setIsSearchOpen(false);
+  //     }
+  //   };
+
+  //   if (isSearchOpen) {
+  //     document.addEventListener("mousedown", handleClickOutside);
+  //   } else {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   }
+
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   };
+  // }, [isSearchOpen]);
+  // const [isOpen, setIsOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // Handle click outside to close dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <header className="w-full border-b border-gray-100">
@@ -116,6 +170,67 @@ export default function Navbar() {
               </div>
             </div>
           </form>
+          <button
+            type="button"
+            onClick={toggleDropdown}
+            ref={buttonRef}
+            className="bg-white border border-gray-300 rounded-full w-8 h-8 p-1 flex items-center justify-center shadow-none text-black hover:text-primary hover:bg-transparent hover:border-primary transition-colors duration-200"
+          >
+            <IoIosNotifications
+              size={25}
+              className="hover:text-primary text-[35px]"
+            />
+          </button>
+
+          {isOpen && (
+            <>
+              {/* Overlay for mobile - helps with click outside detection */}
+              <div className="fixed inset-0 bg-black/5 z-40 md:hidden" />
+
+              {/* Notification dropdown */}
+              <div
+                ref={dropdownRef}
+                className="absolute top-[80px] right-[10px] w-72 sm:w-80 sm:right-[20px] md:top-[80px] md:right-[220px] lg:top-[60px] lg:right-[290px] mt-2 bg-white shadow-lg rounded-md z-50"
+              >
+                <div className="p-4 border-b border-gray-100">
+                  <h2 className="text-lg font-semibold">Notifications</h2>
+                </div>
+                <div className="max-h-[70vh] overflow-y-auto">
+                  {notificationData.map((notification) => (
+                    <div
+                      key={notification.id}
+                      className={cn(
+                        "p-4 border-b border-gray-100 hover:bg-gray-50",
+                        !notification.read && "bg-gray-50"
+                      )}
+                    >
+                      <div className="flex gap-3">
+                        <div className="w-[50px] h-[40px] mt-1">
+                          <FaChevronCircleRight
+                            className="text-primary"
+                            size={24}
+                          />
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-sm text-gray-700">
+                            {notification.title}
+                          </p>
+                          <p className="text-xs text-gray-500 mt-1">
+                            {notification.time}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                {notificationData.length === 0 && (
+                  <div className="p-4 text-center text-gray-500">
+                    No notifications
+                  </div>
+                )}
+              </div>
+            </>
+          )}
           <Link
             href={"/"}
             className="lg:flex md:flex hidden items-center gap-2 p-2  rounded-[8px] hover:bg-slate-50 "
