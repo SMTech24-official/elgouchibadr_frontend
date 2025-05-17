@@ -1,10 +1,11 @@
 import { Star } from "lucide-react"
 import { BenefitCard } from "../card/BenifitCard"
+import { SectionHeading } from "../itemss/SectionHeading"
 
 export function AboutUsContent() {
   return (
-    <div className="max-w-3xl">
-      {/* <SectionHeading as="h1">About Us</SectionHeading> */}
+    <div>
+      <SectionHeading as="h1">About Us</SectionHeading>
 
       <ul className="space-y-6 list-disc pl-6 mb-8">
         <li className="text-gray-800">

@@ -4,9 +4,9 @@
 import { SectionHeading } from "../itemss/SectionHeading";
 import { StepItem } from "../itemss/StepItem";
 
-export function FinalizingTheSaleContent() {
+export function FinalizeContent() {
   return (
-    <div className="max-w-3xl">
+    <div >
       <SectionHeading as="h2">Finalizing the Sale</SectionHeading>
 
       <p className="text-gray-800 mb-8">

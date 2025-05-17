@@ -6,7 +6,7 @@ import { StepItem } from "../itemss/StepItem";
 
 export function SellingACarContent() {
   return (
-    <div className="max-w-3xl">
+    <div>
       <SectionHeading as="h2">Selling a Car</SectionHeading>
 
       <p className="text-gray-800 mb-8">

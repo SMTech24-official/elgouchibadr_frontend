@@ -7,6 +7,12 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { FaGavel, FaInfoCircle, FaCheckCircle } from "react-icons/fa";
 import { BsCashCoin } from "react-icons/bs";
 import carabout from "@/assets/image/about.png";
+import { AboutUsContent } from "../content/AboutContent";
+import { BuyingACarContent } from "../content/BuyingContent";
+import { SellingACarContent } from "../content/SellingContent";
+import { FinalizeContent } from "../content/FinalizeContent";
+import WhyChooseUsSection from "../home/WhyChooseUsSection";
+import TestimonialsSection from "../home/TestomonialSection";
 
 export default function CarsAndBidsSection() {
   const [expandedSection, setExpandedSection] = useState<string | null>(
@@ -245,6 +251,17 @@ export default function CarsAndBidsSection() {
             </div>
           </div>
         </div>
+
+        <AboutUsContent />
+        <BuyingACarContent />
+        <SellingACarContent />
+        <FinalizeContent />
+      </div>
+      <div className="py-[40px]">
+        <WhyChooseUsSection />
+      </div>
+      <div>
+        <TestimonialsSection />
       </div>
     </section>
   );
