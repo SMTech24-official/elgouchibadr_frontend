@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from "react"
 import { ArrowRight } from "lucide-react"
+import { Button } from "../ui/button"
+import { useRouter } from "next/navigation"
 
 export default function HeroSec() {
   const textRef = useRef<HTMLSpanElement>(null)
@@ -37,6 +39,11 @@ export default function HeroSec() {
     return () => clearInterval(interval)
   }, [])
 
+  const router = useRouter()
+  const handleaddCar = () => {
+    router.push('/sell-car/add-car')
+  }
+
   return (
     <div className="bg-gray-50 py-12 md:py-20">
       <div className="container mx-auto px-4  text-center">
@@ -47,9 +54,9 @@ export default function HeroSec() {
           <h2 className="text-xl md:text-2xl text-gray-600 mb-8">More buyers, more bids, more profit</h2>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-2">
-            <button className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-md transition-colors">
+            <Button onClick={handleaddCar} className="bg-primary hover:bg-primary/95  text-white font-medium py-6 px-6 rounded-md transition-colors">
               Sell now — it&apos;s free!
-            </button>
+            </Button>
             <button className="border border-gray-300 hover:bg-gray-100 text-gray-700 font-medium py-3 px-6 rounded-md transition-colors flex items-center justify-center">
               Manage your listings <ArrowRight className="ml-2 h-4 w-4" />
             </button>

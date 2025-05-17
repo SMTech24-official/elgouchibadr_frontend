@@ -40,7 +40,7 @@ export default function CarListing() {
     <div className="space-y-6">
       {/* Car Title Section */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-        <div>
+        <div className="pt-[40px] pb-[30px]">
           <h1 className="text-2xl md:text-3xl font-bold">
             2022 Porsche 718 Cayman GT4
           </h1>
@@ -58,7 +58,7 @@ export default function CarListing() {
           </Button>
           <Button
             variant="outline"
-            className="h-10 rounded-md bg-blue-500 text-white hover:bg-blue-600"
+            className="h-10 rounded-md bg-primary text-white hover:bg-primary/95"
           >
             <Share2 className="h-5 w-5 mr-2" /> Share
           </Button>

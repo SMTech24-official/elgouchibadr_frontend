@@ -13,6 +13,7 @@ import { SellingACarContent } from "../content/SellingContent";
 import { FinalizeContent } from "../content/FinalizeContent";
 import WhyChooseUsSection from "../home/WhyChooseUsSection";
 import TestimonialsSection from "../home/TestomonialSection";
+import man from '@/assets/women.png'
 
 export default function CarsAndBidsSection() {
   const [expandedSection, setExpandedSection] = useState<string | null>(
@@ -232,7 +233,7 @@ export default function CarsAndBidsSection() {
                 <div className="flex items-center gap-4 mb-4">
                   <div className="relative w-16 h-16 rounded-full overflow-hidden">
                     <Image
-                      src="/placeholder.svg?height=64&width=64"
+                      src={man}
                       alt="Doug DeMuro"
                       width={64}
                       height={64}
