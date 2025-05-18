@@ -1,10 +1,12 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import man from '@/assets/women.png'
 import { MapPin, Clock } from "lucide-react"
+import UserCar from "@/components/sellcar/UserCar"
 
 export default function ProfilePage() {
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className=" mx-auto">
       <div className="bg-white border border-gray-200 rounded-md p-6">
         <div className="flex justify-end mb-4">
           <Button variant="outline" size="sm" className="text-xs">
@@ -16,7 +18,7 @@ export default function ProfilePage() {
           <div className="relative">
             <div className="w-[100px] h-[100px] rounded-full overflow-hidden">
               <Image
-                src="/placeholder.svg?height=100&width=100"
+                src={man}
                 alt="Mariyam Mohona"
                 width={100}
                 height={100}
@@ -45,6 +47,13 @@ export default function ProfilePage() {
                 <span>You enrolled in six chapters for your ninth-grade class.</span>
               </div>
             </div>
+
+
+          <UserCar/>
+
+
+
+            
           </div>
         </div>
       </div>

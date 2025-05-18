@@ -10,6 +10,16 @@ export type Car = {
   additionalImages: File | StaticImageData[]
 }
 
+export interface AuctionCommentProps {
+  id: number
+  title: string
+  details: string
+  comment: string
+  votes: number
+  time: string
+  price: number
+  image: string | StaticImageData
+}
 export interface CarFilter {
   id: string
   title: string

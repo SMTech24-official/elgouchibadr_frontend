@@ -83,6 +83,35 @@ export default function CarDescription() {
             ))}
           </ul>
         </section>
+        <section className="mb-8">
+          <h3 className="text-xl font-bold mb-4 border-b pb-2">Video</h3>
+          <div className="w-full grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-4">
+            <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-lg">
+              {" "}
+              {/* 16:9 aspect ratio */}
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/hQYRDNl-lGI?si=P18rwscygITobSQL"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-lg">
+              {" "}
+              {/* 16:9 aspect ratio */}
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/NMThdHhrLoM?si=5rTrHEIiUUPZgUR5"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </section>
 
         {/* Safe-pay section */}
         <div className="bg-gray-100 rounded-lg p-4 mb-6">

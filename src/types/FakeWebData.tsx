@@ -506,3 +506,47 @@ export const notificationData= [
     read: true,
   },
 ]
+
+
+export const auctionComments = [
+  {
+    id: 1,
+    title: "2022 Porsche 718 Cayman GT4",
+    details: "~7,400 Miles, 4.0-Liter Flat-6, Highly Equipped, Some Modifications",
+    comment: "Well bought.... instant $10-15K in equity after fees IMO.",
+    votes: 12,
+    time: "10:50:54",
+    price: 90562,
+    image: car,
+  },
+  {
+    id: 2,
+    title: "2022 Porsche 718 Cayman GT4",
+    details: "~7,400 Miles, 4.0-Liter Flat-6, Highly Equipped, Some Modifications",
+    comment: "Well bought.... instant $10-15K in equity after fees IMO.",
+    votes: 12,
+    time: "10:50:54",
+    price: 90562,
+    image: car,
+  },
+  {
+    id: 3,
+    title: "2021 Porsche 911 Turbo S",
+    details: "12,500 Miles, Twin-Turbo Flat-6, Premium Package, Carbon Ceramic Brakes",
+    comment: "Market correct price. These have been holding steady for months.",
+    votes: 8,
+    time: "09:32:17",
+    price: 189750,
+    image: car,
+  },
+  {
+    id: 4,
+    title: "2020 BMW M2 Competition",
+    details: "18,200 Miles, 3.0L Twin-Turbo Inline-6, 6-Speed Manual, Track Package",
+    comment: "Great deal for the buyer. These are getting harder to find with a manual.",
+    votes: 15,
+    time: "14:22:05",
+    price: 58900,
+    image: car,
+  },
+]

@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRightIcon, SearchIcon } from "lucide-react";
-import logo from "@/assets/logo/logo.jpg";
+import logo from "@/assets/image/carlogo.png";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
@@ -103,15 +103,15 @@ export default function Navbar() {
 
   return (
     <header className="w-full border-b border-gray-100">
-      <div className="container flex h-16 items-center justify-between px-4">
+      <div className="container flex h-16 items-center justify-between px-4 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <div className="relative">
             <Image
               src={logo}
               alt="Logo"
-              width={150}
-              height={80}
+              width={100}
+              height={70}
               className="object-contain"
               priority
             />
