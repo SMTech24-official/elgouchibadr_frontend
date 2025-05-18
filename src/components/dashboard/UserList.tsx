@@ -10,66 +10,32 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-
-
-import {
-  Eye,
-  EyeOff,
-  Trash2,
-  
-} from "lucide-react";
-// import Paginations from "../common/Paginations";
 import Swal from "sweetalert2";
+import { UserData } from "@/types/fakeDashboardData";
 
-interface User {
-  id: string;
-  email: string;
-  username: string;
-  password: string;
-}
-
-// Mock data for demonstration
-const mockUsers: User[] = Array.from({ length: 50 }).map((_, i) => ({
-  id: `user-${i + 1}`,
-  email: `user${i + 1}@example.com`,
-  username: `user${i + 1}`,
-  password: `password${i + 1}`,
-}));
+// interface User {
+//   id: string;
+//   name: string;
+//   role: string;
+//   startDate: string;
+//   endDate: string;
+//   status: string;
+// }
 
 export default function UserList() {
-  const [currentPage, ] = useState(1);
-  const [search, setSearch] = useState("");
-  const [showPassword, setShowPassword] = useState<Record<string, boolean>>({});
-
+  const [currentPage] = useState(1);
   const itemsPerPage = 10;
 
   // Filter users based on search term
-  const filteredUsers = mockUsers.filter(
-    (user) =>
-      user.email.toLowerCase().includes(search.toLowerCase()) ||
-      user.username.toLowerCase().includes(search.toLowerCase())
-  );
+ 
 
   // Calculate pagination
-  // const totalPages = Math.ceil(filteredUsers.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const paginatedUsers = filteredUsers.slice(
+  const paginatedUsers = UserData.slice(
     startIndex,
     startIndex + itemsPerPage
   );
 
-  // Toggle password visibility for a specific user
-  const togglePasswordVisibility = (userId: string) => {
-    setShowPassword((prev) => ({
-      ...prev,
-      [userId]: !prev[userId],
-    }));
-  };
-
-  // const handlePageChange = (page: number) => {
-  //   setCurrentPage(page);
-  // };
 
   const handleDelete = () => {
     Swal.fire({
@@ -82,9 +48,8 @@ export default function UserList() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        // Perform your delete action here
-        console.log("Deleted!");
-        Swal.fire("Deleted!", "Your item has been deleted.", "success");
+        // In a real app, you would call an API here
+        Swal.fire("Deleted!", "User has been deleted.", "success");
       }
     });
   };
@@ -92,22 +57,22 @@ export default function UserList() {
   return (
     <div className="space-y-4">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <Input
-          placeholder="Search users..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="max-w-sm border-primary/20 focus-visible:ring-primary/30 text-black"
-        />
-       
+        <h3 className="lg:text-[23px] text-black md:text-xl font-semibold">
+          All Users
+        </h3>
+        
       </div>
 
       <div className="border border-primary/10 rounded-md overflow-x-auto">
         <Table>
           <TableHeader className="bg-primary text-white">
             <TableRow className="hover:bg-primary/90">
-              <TableHead className="text-white">Email</TableHead>
-              <TableHead className="text-white">Username</TableHead>
-              <TableHead className="text-white">Password</TableHead>
+              <TableHead className="text-white">ID</TableHead>
+              <TableHead className="text-white">Name</TableHead>
+              <TableHead className="text-white">Role</TableHead>
+              <TableHead className="text-white">Start Date</TableHead>
+              <TableHead className="text-white">End Date</TableHead>
+              <TableHead className="text-white">Status</TableHead>
               <TableHead className="w-[100px] text-right text-white">
                 Actions
               </TableHead>
@@ -124,48 +89,46 @@ export default function UserList() {
                       : "bg-primary/5 hover:bg-primary/10"
                   }
                 >
-                  <TableCell>{user.email}</TableCell>
-                  <TableCell className="font-medium">{user.username}</TableCell>
+                  <TableCell>{user.id}</TableCell>
+                  <TableCell className="font-medium">{user.name}</TableCell>
+                  <TableCell>{user.role}</TableCell>
+                  <TableCell>{user.startDate}</TableCell>
+                  <TableCell>{user.endDate}</TableCell>
                   <TableCell>
-                    <div className="flex items-center space-x-2">
-                      <span>
-                        {showPassword[user.id] ? user.password : "••••••••"}
-                      </span>
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        onClick={() => togglePasswordVisibility(user.id)}
-                        className="hover:text-secondary hover:bg-primary/5"
-                      >
-                        {showPassword[user.id] ? (
-                          <EyeOff className="h-4 w-4" />
-                        ) : (
-                          <Eye className="h-4 w-4" />
-                        )}
-                        <span className="sr-only">
-                          {showPassword[user.id]
-                            ? "Hide password"
-                            : "Show password"}
-                        </span>
-                      </Button>
-                    </div>
+                    <span
+                      className={`px-2 py-1 rounded-full text-xs ${
+                        user.status === "Active"
+                          ? "bg-green-100 text-green-800"
+                          : "bg-red-100 text-red-800"
+                      }`}
+                    >
+                      {user.status}
+                    </span>
                   </TableCell>
-                  <TableCell className="text-right">
+                  <TableCell className="text-right space-x-2 flex gap-2">
+                   
                     <Button
                       variant="ghost"
-                      size="icon"
-                      onClick={handleDelete}
-                      className="text-destructive hover:bg-destructive/10"
+                      size="sm"
+                      onClick={() => handleDelete()}
+                      className="text-destructive hover:bg-destructive/10 text-red-600 hover:text-red-700"
                     >
-                      <Trash2 className="h-4 w-4" />
-                      <span className="sr-only">Delete</span>
+                      Deactivate
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => handleDelete()}
+                      className="text-destructive hover:bg-destructive/10 text-red-600 hover:text-red-700"
+                    >
+                      Delete
                     </Button>
                   </TableCell>
                 </TableRow>
               ))
             ) : (
               <TableRow>
-                <TableCell colSpan={4} className="text-center py-6">
+                <TableCell colSpan={7} className="text-center py-6">
                   No users found
                 </TableCell>
               </TableRow>
@@ -173,17 +136,6 @@ export default function UserList() {
           </TableBody>
         </Table>
       </div>
-
-      {/* {totalPages > 1 && (
-        <Paginations
-          currentPage={currentPage}
-          totalPages={totalPages}
-          itemsPerPage={itemsPerPage}
-          totalItems={filteredUsers.length}
-          startIndex={startIndex}
-          onPageChange={handlePageChange}
-        />
-      )} */}
     </div>
   );
 }

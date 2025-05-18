@@ -6,11 +6,11 @@ import { usePathname, useRouter } from "next/navigation";
 import logo from "@/assets/logo/logo.jpg";
 import Cookies from "js-cookie";
 import { toast } from "sonner";
-import { MdOutlineCategory } from "react-icons/md";
-import { MdProductionQuantityLimits } from "react-icons/md";
 import { MdOutlineEvent } from "react-icons/md";
-import { ImBlogger } from "react-icons/im";
-import { CgProductHunt } from "react-icons/cg";
+// import { MdOutlineCategory } from "react-icons/md";
+// import { MdProductionQuantityLimits } from "react-icons/md";
+// import { ImBlogger } from "react-icons/im";
+// import { CgProductHunt } from "react-icons/cg";
 
 import {
   LayoutDashboard,
@@ -51,26 +51,26 @@ const menuItems = [
     icon: MdOutlineEvent,
     href: "/dashboard/podcastEvent",
   },
-  {
-    title: "Blog Category",
-    icon: MdProductionQuantityLimits,
-    href: "/dashboard/blogCategory",
-  },
-  {
-    title: "Product Category",
-    icon: MdOutlineCategory,
-    href: "/dashboard/productCategory",
-  },
-  {
-    title: "Product",
-    icon: CgProductHunt,
-    href: "/dashboard/product",
-  },
-  {
-    title: "Blog",
-    icon: ImBlogger,
-    href: "/dashboard/blog",
-  },
+  // {
+  //   title: "Blog Category",
+  //   icon: MdProductionQuantityLimits,
+  //   href: "/dashboard/blogCategory",
+  // },
+  // {
+  //   title: "Product Category",
+  //   icon: MdOutlineCategory,
+  //   href: "/dashboard/productCategory",
+  // },
+  // {
+  //   title: "Product",
+  //   icon: CgProductHunt,
+  //   href: "/dashboard/product",
+  // },
+  // {
+  //   title: "Blog",
+  //   icon: ImBlogger,
+  //   href: "/dashboard/blog",
+  // },
 ];
 
 export function DashboardSidebar() {

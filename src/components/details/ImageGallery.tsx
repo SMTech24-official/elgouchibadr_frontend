@@ -41,6 +41,7 @@ export default function ImageGallery({ images, initialIndex, onClose }: ImageGal
 
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // Prevent body scrolling when gallery is open

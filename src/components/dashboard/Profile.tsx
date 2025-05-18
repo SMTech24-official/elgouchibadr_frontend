@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Separator } from "@/components/ui/separator"
+// import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+// import { Separator } from "@/components/ui/separator"
 import logo from '@/assets/logo/logo.jpg'
 import Image, { StaticImageData } from 'next/image'
 
@@ -66,10 +66,10 @@ export default function Profile() {
                     {/* Left column - Avatar and basic info */}
                     <div className="md:w-1/3 bg-primary  p-8 text-white">
                         <div className="text-center">
-                            <Avatar className="w-48 h-48 mx-auto mb-6 border-4 border-white">
+                            {/* <Avatar className="w-48 h-48 mx-auto mb-6 border-4 border-white"> */}
                                 <Image src={profile.avatar} alt={profile.name} width={192} height={192} />
-                                <AvatarFallback>{profile.name.charAt(0)}</AvatarFallback>
-                            </Avatar>
+                                {/* <AvatarFallback>{profile.name.charAt(0)}</AvatarFallback>
+                            </Avatar> */}
                             <h2 className="text-3xl font-bold mb-2">{profile.name}</h2>
                             <p className="text-gray-300 mb-4">{profile.position}</p>
                             {isEditing ? (
@@ -85,7 +85,7 @@ export default function Profile() {
                                 </div>
                             ) : null}
                         </div>
-                        <Separator className="my-6 bg-gray-600" />
+                        {/* <Separator className="my-6 bg-gray-600" /> */}
                         <div className="space-y-4">
                             <div className="flex items-center">
                                 <Briefcase className="w-5 h-5 mr-3" />

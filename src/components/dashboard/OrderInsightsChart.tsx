@@ -50,13 +50,13 @@ export default function OrderInsightsCard() {
   };
 
   return (
-    <div className="p-6 rounded-lg w-full overflow-x-auto">
+    <div className="p-6 rounded-lg w-full overflow-x-auto bg-white">
       <div className="flex justify-between items-center mb-6 min-w-[400px]">
         <h2 className="text-xl text-black">Bidding Amount</h2>
         <Button
           variant="outline"
           onClick={handleToggleView}
-          className="text-gray-400 bg-transparent border-gray-700"
+          className="text-white bg-primary border-primary"
         >
           {viewMode}
           <ChevronDown className="ml-2 h-4 w-4" />

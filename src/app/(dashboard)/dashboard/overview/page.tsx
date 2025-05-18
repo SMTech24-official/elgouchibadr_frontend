@@ -12,8 +12,7 @@ const Dashboard = () => {
  
   return (
     <div>
-      
-      <div className="px-6">
+      <div>
         <OrderStatistics/>
       </div>
       {/* order insights */}
