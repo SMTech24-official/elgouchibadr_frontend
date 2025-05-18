@@ -1,19 +1,13 @@
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import man from '@/assets/women.png'
-import { MapPin, Clock } from "lucide-react"
-import UserCar from "@/components/sellcar/UserCar"
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import man from "@/assets/women.png";
+import { MapPin, Clock } from "lucide-react";
+import UserCar from "@/components/sellcar/UserCar";
 
 export default function ProfilePage() {
   return (
     <div className=" mx-auto">
       <div className="bg-white border border-gray-200 rounded-md p-6">
-        <div className="flex justify-end mb-4">
-          <Button variant="outline" size="sm" className="text-xs">
-            Edit
-          </Button>
-        </div>
-
         <div className="flex items-start gap-6">
           <div className="relative">
             <div className="w-[100px] h-[100px] rounded-full overflow-hidden">
@@ -28,7 +22,16 @@ export default function ProfilePage() {
           </div>
 
           <div className="flex-1">
-            <h1 className="text-2xl font-semibold text-gray-900 mb-1">Mariyam Mohona</h1>
+            <div className="flex flex-row justify-between items-center">
+              <h1 className="text-2xl font-semibold text-gray-900 mb-1">
+              Mariyam Mohona
+            </h1>
+             <div className="flex justify-end mb-4">
+              <Button variant="outline" size="sm" className="text-xs">
+                Edit
+              </Button>
+            </div>
+            </div>
 
             <div className="flex items-center gap-2 text-gray-600 mb-1">
               <span>+880 01567808747</span>
@@ -44,19 +47,18 @@ export default function ProfilePage() {
 
               <div className="flex items-center gap-1">
                 <MapPin size={16} className="text-gray-500" />
-                <span>You enrolled in six chapters for your ninth-grade class.</span>
+                <span>
+                  You enrolled in six chapters for your ninth-grade class.
+                </span>
               </div>
             </div>
-
-
-          <UserCar/>
-
-
-
-            
+           
           </div>
         </div>
       </div>
+       <div className="border p-3 my-2 rounded-[8px]">
+         <UserCar />
+       </div>
     </div>
-  )
+  );
 }

@@ -511,22 +511,26 @@ export const notificationData= [
 export const auctionComments = [
   {
     id: 1,
-    title: "2022 Porsche 718 Cayman GT4",
+    title: "2022 mercedez 718 Cayman GT4",
     details: "~7,400 Miles, 4.0-Liter Flat-6, Highly Equipped, Some Modifications",
     comment: "Well bought.... instant $10-15K in equity after fees IMO.",
     votes: 12,
     time: "10:50:54",
     price: 90562,
+    isSold: true,
+    isPending: false,
     image: car,
   },
   {
     id: 2,
-    title: "2022 Porsche 718 Cayman GT4",
+    title: "2025 Porsche 718 Cayman GT4",
     details: "~7,400 Miles, 4.0-Liter Flat-6, Highly Equipped, Some Modifications",
     comment: "Well bought.... instant $10-15K in equity after fees IMO.",
     votes: 12,
     time: "10:50:54",
     price: 90562,
+    isSold: false,
+    isPending: false,
     image: car,
   },
   {
@@ -537,6 +541,8 @@ export const auctionComments = [
     votes: 8,
     time: "09:32:17",
     price: 189750,
+    isSold: true,
+    isPending: true,
     image: car,
   },
   {
@@ -547,6 +553,8 @@ export const auctionComments = [
     votes: 15,
     time: "14:22:05",
     price: 58900,
+    isSold: true,
+    isPending: false,
     image: car,
   },
 ]

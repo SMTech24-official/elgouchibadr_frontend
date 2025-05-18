@@ -14,6 +14,8 @@ export interface AuctionCommentProps {
   id: number
   title: string
   details: string
+  isPending: boolean
+  isSold: boolean
   comment: string
   votes: number
   time: string
