@@ -59,11 +59,11 @@ const menuItems = [
       },
     ],
   },
-  { title: "Reports", icon: ListOrdered, href: "/dashboard/orders" },
+  { title: "Reports", icon: ListOrdered, href: "/dashboard/reports" },
   {
     title: "Settings",
     icon: MdOutlineEvent,
-    href: "/dashboard/podcastEvent",
+    href: "/dashboard/settings",
   },
 ];
 
