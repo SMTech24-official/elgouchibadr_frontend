@@ -19,7 +19,7 @@ import {
   Trash2,
   
 } from "lucide-react";
-import Paginations from "../common/Paginations";
+// import Paginations from "../common/Paginations";
 import Swal from "sweetalert2";
 
 interface User {
@@ -38,7 +38,7 @@ const mockUsers: User[] = Array.from({ length: 50 }).map((_, i) => ({
 }));
 
 export default function UserList() {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, ] = useState(1);
   const [search, setSearch] = useState("");
   const [showPassword, setShowPassword] = useState<Record<string, boolean>>({});
 
@@ -52,7 +52,7 @@ export default function UserList() {
   );
 
   // Calculate pagination
-  const totalPages = Math.ceil(filteredUsers.length / itemsPerPage);
+  // const totalPages = Math.ceil(filteredUsers.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const paginatedUsers = filteredUsers.slice(
     startIndex,
@@ -67,9 +67,9 @@ export default function UserList() {
     }));
   };
 
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-  };
+  // const handlePageChange = (page: number) => {
+  //   setCurrentPage(page);
+  // };
 
   const handleDelete = () => {
     Swal.fire({
@@ -174,7 +174,7 @@ export default function UserList() {
         </Table>
       </div>
 
-      {totalPages > 1 && (
+      {/* {totalPages > 1 && (
         <Paginations
           currentPage={currentPage}
           totalPages={totalPages}
@@ -183,7 +183,7 @@ export default function UserList() {
           startIndex={startIndex}
           onPageChange={handlePageChange}
         />
-      )}
+      )} */}
     </div>
   );
 }

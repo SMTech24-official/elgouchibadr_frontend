@@ -1,5 +1,4 @@
 import PayementBarChart from "@/components/dashboard/PaymentBarChart";
-import TransactionList from "@/components/dashboard/TransactionList";
 import TransactionMetrics from "@/components/dashboard/TransactionMetrics";
 
 export default function Page() {
@@ -13,9 +12,7 @@ export default function Page() {
                 </div>
               
             </div>
-            <div>
-                <TransactionList/>
-            </div>
+            
         </div>
     );
 }

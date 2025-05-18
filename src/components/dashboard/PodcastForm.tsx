@@ -19,7 +19,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+// import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import { Label } from "../ui/label";
 
@@ -146,7 +146,7 @@ const PodcastForm = () => {
             {isEditing ? "Edit Podcast" : "Create New Podcast"}
           </CardTitle>
         </CardHeader>
-        <Separator className="mb-6" />
+        {/* <Separator className="mb-6" /> */}
         <CardContent>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
