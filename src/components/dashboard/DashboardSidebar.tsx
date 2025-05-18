@@ -29,27 +29,33 @@ const menuItems = [
   {
     title: "All User",
     icon: Package,
-    href: "/dashboard/users",
     subItems: [
-      { title: "User Activity", icon: CreditCard, href: "/dashboard/activateuser" },
-      { title: "User Verification", icon: CreditCard, href: "/dashboard/verifieduser" },
-    ]
+      {
+        title: "All User",
+        icon: CreditCard,
+        href: "/dashboard/users",
+      },
+      {
+        title: "User Activity",
+        icon: CreditCard,
+        href: "/dashboard/users/activateuser",
+      },
+      {
+        title: "User Verification",
+        icon: CreditCard,
+        href: "/dashboard/users/verifieduser",
+      },
+    ],
   },
   {
     title: "Auctions",
     icon: CreditCard,
-    href: "/dashboard/payment",
     subItems: [
-      { title: "Live Auction", icon: CreditCard, href: "/dashboard/payment" },
-      {
-        title: "Bidding Auction",
-        icon: CreditCard,
-        href: "/dashboard/payment",
-      },
+      { title: "Live Auction", icon: CreditCard, href: "/dashboard/auction/all-auction" },
       {
         title: "Completed Auction",
         icon: CreditCard,
-        href: "/dashboard/payment",
+        href: "/dashboard/auction/completed-auction",
       },
     ],
   },
@@ -59,26 +65,6 @@ const menuItems = [
     icon: MdOutlineEvent,
     href: "/dashboard/podcastEvent",
   },
-  // {
-  //   title: "Blog Category",
-  //   icon: MdProductionQuantityLimits,
-  //   href: "/dashboard/blogCategory",
-  // },
-  // {
-  //   title: "Product Category",
-  //   icon: MdOutlineCategory,
-  //   href: "/dashboard/productCategory",
-  // },
-  // {
-  //   title: "Product",
-  //   icon: CgProductHunt,
-  //   href: "/dashboard/product",
-  // },
-  // {
-  //   title: "Blog",
-  //   icon: ImBlogger,
-  //   href: "/dashboard/blog",
-  // },
 ];
 
 export function DashboardSidebar() {
@@ -128,33 +114,51 @@ export function DashboardSidebar() {
         </Link>
         <nav className="space-y-1">
           {menuItems.map((item) => {
-            const itemPath = item.href.split("/dashboard/")[1] || "";
-            const isActive = pathname
-              .toLowerCase()
-              .startsWith(itemPath.toLowerCase());
             const hasSubItems = item.subItems && item.subItems.length > 0;
+            const isActive = item.href
+              ? pathname
+                  .toLowerCase()
+                  .startsWith(
+                    item.href.split("/dashboard/")[1]?.toLowerCase() || ""
+                  )
+              : false;
 
             return (
-              <div key={item.href} className="flex flex-col">
-                <div
-                  className={cn(
-                    "flex items-center justify-between text-accent hover:text-white gap-3 rounded-[8px] px-3 py-2 text-sm transition-colors hover:bg-accent cursor-pointer",
-                    isActive && "bg-accent text-white",
-                    hasSubItems && "cursor-pointer"
-                  )}
-                  onClick={() => hasSubItems && toggleItem(item.title)}
-                >
-                  <div className="flex items-center gap-3">
-                    <item.icon className="h-5 w-5" />
-                    {item.title}
-                  </div>
-                  {hasSubItems &&
-                    (expandedItem === item.title ? (
+              <div key={item.title} className="flex flex-col">
+                {hasSubItems ? (
+                  // Parent item with submenu (not clickable for navigation)
+                  <div
+                    className={cn(
+                      "flex items-center justify-between text-accent hover:text-white gap-3 rounded-[8px] px-3 py-2 text-sm transition-colors hover:bg-accent cursor-pointer",
+                      isActive && "bg-accent text-white"
+                    )}
+                    onClick={() => toggleItem(item.title)}
+                  >
+                    <div className="flex items-center gap-3">
+                      <item.icon className="h-5 w-5" />
+                      {item.title}
+                    </div>
+                    {expandedItem === item.title ? (
                       <ChevronUp className="h-4 w-4" />
                     ) : (
                       <ChevronDown className="h-4 w-4" />
-                    ))}
-                </div>
+                    )}
+                  </div>
+                ) : (
+                  // Regular clickable menu item
+                  item.href && (
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        "flex items-center text-accent hover:text-white gap-3 rounded-[8px] px-3 py-2 text-sm transition-colors hover:bg-accent",
+                        isActive && "bg-accent text-white"
+                      )}
+                    >
+                      <item.icon className="h-5 w-5" />
+                      {item.title}
+                    </Link>
+                  )
+                )}
 
                 {hasSubItems && (
                   <div

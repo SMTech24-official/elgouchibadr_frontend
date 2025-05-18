@@ -107,3 +107,55 @@ export const ActivateUser = [
     activateDate: "2025-02-10",
   },
 ];
+
+
+export const LiveAuction = [
+  {
+    id: 1,
+    name: "Toyota Camry",
+    price: "$12,500",
+    timeLeft: "5h 30m",
+    bids: "03",
+    status: "Live"
+  },
+  {
+    id: 2,
+    name: "Honda Civic",
+    price: "$8,200",
+    timeLeft: "3h 15m",
+    bids: "05",
+    status: "Live"
+  },
+  {
+    id: 3,
+    name: "BMW 3 Series",
+    price: "$25,000",
+    timeLeft: "12h 45m",
+    bids: "12",
+    status: "Live"
+  },
+  {
+    id: 4,
+    name: "BMW 3 Series",
+    price: "$25,000",
+    timeLeft: "12h 45m",
+    bids: "12",
+    status: "Live"
+  },
+  {
+    id: 5,
+    name: "BMW 3 Series",
+    price: "$25,000",
+    timeLeft: "12h 45m",
+    bids: "12",
+    status: "Live"
+  },
+  {
+    id: 5,
+    name: "BMW 3 Series",
+    price: "$25,000",
+    timeLeft: "12h 45m",
+    bids: "12",
+    status: "Live"
+  }
+]

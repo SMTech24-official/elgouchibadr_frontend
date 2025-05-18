@@ -1,9 +1,9 @@
-import BlogTable from "@/components/dashboard/BlogTable";
+import BlogTable from "@/components/dashboard/auction/LiveauctionList";
 
 export default function Page() {
-    return (
-        <div>
-            <BlogTable/>
-        </div>
-    );
+  return (
+    <div>
+      <BlogTable />
+    </div>
+  );
 }
