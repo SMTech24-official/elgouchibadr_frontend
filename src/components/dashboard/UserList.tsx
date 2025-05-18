@@ -13,14 +13,7 @@ import { Button } from "@/components/ui/button";
 import Swal from "sweetalert2";
 import { UserData } from "@/types/fakeDashboardData";
 
-// interface User {
-//   id: string;
-//   name: string;
-//   role: string;
-//   startDate: string;
-//   endDate: string;
-//   status: string;
-// }
+
 
 export default function UserList() {
   const [currentPage] = useState(1);

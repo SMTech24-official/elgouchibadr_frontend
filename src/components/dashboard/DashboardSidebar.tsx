@@ -26,7 +26,15 @@ import { useState } from "react";
 
 const menuItems = [
   { title: "Overview", icon: LayoutDashboard, href: "/dashboard/overview" },
-  { title: "All User", icon: Package, href: "/dashboard/users" },
+  {
+    title: "All User",
+    icon: Package,
+    href: "/dashboard/users",
+    subItems: [
+      { title: "User Activity", icon: CreditCard, href: "/dashboard/activateuser" },
+      { title: "User Verification", icon: CreditCard, href: "/dashboard/verifieduser" },
+    ]
+  },
   {
     title: "Auctions",
     icon: CreditCard,
