@@ -6,6 +6,7 @@ import Image from "next/image"
 import type { AuctionCommentProps } from "@/types/Interface.type"
 import { HiClock } from "react-icons/hi"
 import { useState } from "react"
+import Link from "next/link"
 
 interface AuctionProps {
   auctionCar: AuctionCommentProps
@@ -15,7 +16,9 @@ export function LiveAuctionCard({ auctionCar }: AuctionProps) {
   const [isFavorite, setIsFavorite] = useState(false)
 
   return (
-    <Card className="mb-4 overflow-hidden shadow-sm border rounded-md hover:shadow-md transition-shadow">
+  <>
+     <Link href={`car-details/${auctionCar.id}`}>
+     <Card className="mb-4 overflow-hidden shadow-sm border rounded-md hover:shadow-md transition-shadow">
       <div className="flex flex-col md:flex-row relative">
         {/* Image container - full width on mobile, 1/3 width on md+ screens */}
         <div className="w-full md:w-1/3 relative h-[200px] md:h-auto">
@@ -95,5 +98,7 @@ export function LiveAuctionCard({ auctionCar }: AuctionProps) {
         </div>
       </div>
     </Card>
+   </Link>
+  </>
   )
 }
