@@ -18,7 +18,7 @@ export function LiveAuctionCard({ auctionCar }: AuctionProps) {
   return (
   <>
      <Link href={`car-details/${auctionCar.id}`}>
-     <Card className="mb-4 overflow-hidden shadow-sm border rounded-md hover:shadow-md transition-shadow">
+     <Card className="mb-4 overflow-hidden shadow-sm border-none rounded-md hover:shadow-md transition-shadow">
       <div className="flex flex-col md:flex-row relative">
         {/* Image container - full width on mobile, 1/3 width on md+ screens */}
         <div className="w-full md:w-1/3 relative h-[200px] md:h-auto">

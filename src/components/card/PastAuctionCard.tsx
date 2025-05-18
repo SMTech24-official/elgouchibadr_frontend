@@ -16,7 +16,7 @@ export function PastAuctionCard({ auctionCar }: AuctionProps) {
   return (
     <>
       <Link href={`/car-details/${auctionCar.id}`}>
-        <Card className="mb-4 overflow-hidden shadow-sm border rounded-lg">
+        <Card className="mb-4 overflow-hidden shadow-sm border rounded-lg hover:shadow-md">
           <div className="relative">
             <div className="w-full relative">
               <Image

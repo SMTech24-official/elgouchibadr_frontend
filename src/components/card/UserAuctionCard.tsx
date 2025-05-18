@@ -17,7 +17,7 @@ export function UserAuctionCard({ auctionCar }: AuctionProps) {
 
   return (
     <Link href={`/car-details/${auctionCar.id}`}>
-      <Card className="mb-4 overflow-hidden shadow-none border-none">
+      <Card className="mb-4 overflow-hidden shadow-sm hover:shadow-md border-none">
         <div className="flex flex-col md:flex-row relative">
           <div className="w-full md:w-1/3 relative">
             <Image
