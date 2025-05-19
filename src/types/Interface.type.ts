@@ -41,3 +41,29 @@ export interface CarFilter {
   endDate: Date
   listDate: Date
 }
+
+
+export interface Author {
+  id: string
+  username: string
+  avatar: string
+}
+
+export interface Comment {
+  id: string
+  author: Author
+  content: string
+  upvotes: number
+  timeAgo: string
+  replies?: Comment[]
+}
+
+export interface Post {
+  id: string
+  author: Author
+  content: string
+  image: string
+  upvotes: number
+  timeAgo: string
+  comments: Comment[]
+}

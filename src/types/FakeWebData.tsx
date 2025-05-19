@@ -4,8 +4,10 @@ import car from "@/assets/image/car.png";
 import front from "@/assets/image/front.png";
 import handle from "@/assets/image/handle.png";
 import sit from "@/assets/image/sit.png";
-import { CarFilter } from "./Interface.type";
+import { CarFilter, Post } from "./Interface.type";
 import man from '@/assets/women.png'
+import BlackCar from '@/assets/image/BlackCar.png'
+import redcar from '@/assets/image/car.png'
 
 // Car data with 5 images per car (1 main + 4 additional)
 export const sliderCarData = [
@@ -556,5 +558,135 @@ export const auctionComments = [
     isSold: true,
     isPending: false,
     image: car,
+  },
+]
+
+
+
+export const posts: Post[] = [
+  {
+    id: "1",
+    author: {
+      id: "user1",
+      username: "ux.saifur.info",
+      avatar: man.src,
+    },
+    content: "Me and a friend lined up a few of his Ford Pintos",
+    image: BlackCar.src,
+    upvotes: 12,
+    timeAgo: "9 hr ago",
+    comments: [
+      {
+        id: "comment1",
+        author: {
+          id: "user1",
+          username: "ux.saifur.info",
+          avatar: man.src,
+        },
+        content: "Well bought.... instant $10-15K in equity after fees IMO.",
+        upvotes: 12,
+        timeAgo: "8 hr ago",
+        replies: [
+          {
+            id: "reply1",
+            author: {
+              id: "user1",
+              username: "ux.saifur.info",
+              avatar: man.src,
+            },
+            content: "Well bought.... instant $10-15K in equity after fees IMO.",
+            upvotes: 3,
+            timeAgo: "7 hr ago",
+          },
+          {
+            id: "reply2",
+            author: {
+              id: "user1",
+              username: "ux.saifur.info",
+              avatar: man.src,
+            },
+            content: "Well bought.... instant $10-15K in equity after fees IMO.",
+            upvotes: 2,
+            timeAgo: "6 hr ago",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "2",
+    author: {
+      id: "user2",
+      username: "car.enthusiast",
+      avatar: man.src,
+    },
+    content: "Just picked up this beauty yesterday. What do you think?",
+    image: redcar.src,
+    upvotes: 45,
+    timeAgo: "2 hr ago",
+    comments: [
+      {
+        id: "comment2",
+        author: {
+          id: "user3",
+          username: "auto.expert",
+          avatar: man.src,
+        },
+        content: "Great choice! The handling on these is exceptional.",
+        upvotes: 8,
+        timeAgo: "1 hr ago",
+        replies: [],
+      },
+      {
+        id: "comment3",
+        author: {
+          id: "user4",
+          username: "gear.head",
+          avatar: man.src,
+        },
+        content: "What options package did you go with?",
+        upvotes: 3,
+        timeAgo: "45 min ago",
+        replies: [],
+      },
+    ],
+  },
+  {
+    id: "3",
+    author: {
+      id: "user5",
+      username: "vintage.rides",
+      avatar: man.src,
+    },
+    content: "Restored this classic over the weekend. 1967 in mint condition.",
+    image: redcar.src,
+    upvotes: 87,
+    timeAgo: "1 day ago",
+    comments: [
+      {
+        id: "comment4",
+        author: {
+          id: "user6",
+          username: "classic.collector",
+          avatar: man.src,
+        },
+        content: "Incredible restoration job! What paint did you use?",
+        upvotes: 15,
+        timeAgo: "22 hr ago",
+        replies: [
+          {
+            id: "reply3",
+            author: {
+              id: "user5",
+              username: "vintage.rides",
+              avatar: man.src,
+            },
+            content: "Thanks! Used the original factory color code with modern clear coat.",
+            upvotes: 7,
+            timeAgo: "20 hr ago",
+          },
+        ],
+      },
+    ],
   },
 ]
