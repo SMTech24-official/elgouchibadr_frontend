@@ -24,7 +24,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "../ui/button";
-import EventTable from './EventTable';
 
 const PodcastList: React.FC = () => {
   const router = useRouter();
@@ -182,9 +181,7 @@ const PodcastList: React.FC = () => {
         </button>
       </div>
 
-      <div>
-        <EventTable/>
-      </div>
+      
     </div>
   );
 };
