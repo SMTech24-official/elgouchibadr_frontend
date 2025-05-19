@@ -80,7 +80,7 @@ export default function CarFilters() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 pb-8">
       <h1 className="text-3xl font-bold mb-6">Auctions</h1>
 
       <div className="flex flex-wrap items-center gap-3 mb-8">

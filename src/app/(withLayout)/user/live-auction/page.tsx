@@ -8,10 +8,10 @@ export default function LiveAuctionPage() {
       <div className="my-6 p-4  border border-gray-200 rounded-md">
         <div className="bg-white pb-4">
           <h1 className="text-2xl font-semibold text-gray-900 mb-4">
-            In Progress
+            Live Auction
           </h1>
           <p className="text-gray-600">
-            Your in-progress items will appear here.
+            Your Live items will appear here.
           </p>
         </div>
         <div className="grid grid-cols-1">

@@ -6,52 +6,57 @@ import { usePathname, useRouter } from "next/navigation";
 import logo from "@/assets/logo/logo.jpg";
 import Cookies from "js-cookie";
 import { toast } from "sonner";
-import { MdOutlineEvent } from "react-icons/md";
 // import { MdOutlineCategory } from "react-icons/md";
 // import { MdProductionQuantityLimits } from "react-icons/md";
 // import { ImBlogger } from "react-icons/im";
 // import { CgProductHunt } from "react-icons/cg";
+import { FaUsers } from "react-icons/fa";
 
 import {
   LayoutDashboard,
   CreditCard,
-  ListOrdered,
-  Package,
   LogOut,
   ChevronUp,
   ChevronDown,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import { HiUsers } from "react-icons/hi2";
+import { TbUserShield } from "react-icons/tb";
+import { TbUserShare } from "react-icons/tb";
+import { RiAuctionFill } from "react-icons/ri";
+import { RiAuctionLine } from "react-icons/ri";
+import { HiDocumentReport } from "react-icons/hi";
+import { IoSettingsSharp } from "react-icons/io5";
 
 const menuItems = [
   { title: "Overview", icon: LayoutDashboard, href: "/dashboard/overview" },
   {
-    title: "All User",
-    icon: Package,
+    title: "Users",
+    icon: HiUsers,
     subItems: [
       {
         title: "All User",
-        icon: CreditCard,
+        icon: FaUsers,
         href: "/dashboard/users",
       },
       {
         title: "User Activity",
-        icon: CreditCard,
+        icon: TbUserShare,
         href: "/dashboard/users/activateuser",
       },
       {
         title: "User Verification",
-        icon: CreditCard,
+        icon: TbUserShield,
         href: "/dashboard/users/verifieduser",
       },
     ],
   },
   {
     title: "Auctions",
-    icon: CreditCard,
+    icon: RiAuctionFill,
     subItems: [
-      { title: "Live Auction", icon: CreditCard, href: "/dashboard/auction/all-auction" },
+      { title: "Live Auction", icon: RiAuctionLine, href: "/dashboard/auction/all-auction" },
       {
         title: "Completed Auction",
         icon: CreditCard,
@@ -59,10 +64,10 @@ const menuItems = [
       },
     ],
   },
-  { title: "Reports", icon: ListOrdered, href: "/dashboard/reports" },
+  { title: "Reports", icon: HiDocumentReport, href: "/dashboard/reports" },
   {
     title: "Settings",
-    icon: MdOutlineEvent,
+    icon: IoSettingsSharp,
     href: "/dashboard/settings",
   },
 ];
